@@ -1,1 +1,8 @@
-theme: minima
+title: Full-Stack Web Development
+description: Курс без фреймворків
+url: https://vitaliybogdanuk.github.io
+baseurl: /Full-Stack-Web-Development
+
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
