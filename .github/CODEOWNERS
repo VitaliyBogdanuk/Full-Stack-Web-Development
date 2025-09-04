@@ -1,9 +1,9 @@
 # Assign default reviewers/owners
-# Replace @your-username with your GitHub handle(s)
-*       @your-username
+# Replace @VitaliyBogdanuk with your GitHub handle(s)
+*       @VitaliyBogdanuk
 
-/modules/M01-HTML-CSS/        @your-username
-/modules/M02-JS-FE/           @your-username
-/modules/M03-NodeJS-Backend/  @your-username
-/modules/M04-Databases/       @your-username
-/modules/M05-FullStack-Integration/ @your-username
+/modules/M01-HTML-CSS/        @VitaliyBogdanuk
+/modules/M02-JS-FE/           @VitaliyBogdanuk
+/modules/M03-NodeJS-Backend/  @VitaliyBogdanuk
+/modules/M04-Databases/       @VitaliyBogdanuk
+/modules/M05-FullStack-Integration/ @VitaliyBogdanuk
