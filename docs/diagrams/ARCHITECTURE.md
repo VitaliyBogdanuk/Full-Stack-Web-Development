@@ -1,7 +1,5 @@
 # 🏗️ Архітектура навчальних проєктів (Mermaid)
 
-> Ці діаграми рендеряться прямо на GitHub. Відкрий файл і побачиш схему.
-
 ## 1) Front-end (HTML/CSS/JS, без фреймворків)
 ```mermaid
 flowchart TB
@@ -57,3 +55,14 @@ flowchart TB
   NGINX <--> NODE
   Users[Користувачі] -->|HTTPS :443| NGINX
 ```
+
+<!-- Mermaid JS -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  // автоініціалізація для ```mermaid``` та <div class="mermaid">...</div>
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: 'loose',   // дозволяє посилання в діаграмах
+    theme: (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'default'
+  });
+</script>
