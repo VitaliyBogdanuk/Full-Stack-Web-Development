@@ -16,15 +16,9 @@ layout: default
 
 ## Корисні матеріали
 - [Огляд програми](./syllabus/overview.md)
-
 - [Як працювати зі студентами](./CLASSROOM.md)
-
 - [Швидкий старт](./STUDENT_GUIDE.md)
-
 - [Налаштування середовища](./LOCAL_SETUP.md)
-
-
-![Pages Deploy](./images/pages.png)
 
 ## Діаграми
 - [Архітектура](./diagrams/ARCHITECTURE.md)
