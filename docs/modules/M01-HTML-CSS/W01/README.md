@@ -286,10 +286,6 @@ Content-Type: text/html
 * [Основи HTML (MDN)](https://developer.mozilla.org/uk/docs/Learn/Getting_started_with_the_web/HTML_basics)
 * [reqbin.com](https://reqbin.com/) — сервіс для тестування HTTP-запитів
 
-<iframe width="auto" height="auto"
-  src="https://youtu.be/wqk9ckofM28?si=8aqFjmB6ucZEbzXK"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+* [Як працює інтернет: комп’ютери та мережа](https://youtu.be/wqk9ckofM28?si=83ZlbM1YaeHUwXNz)
+* [Що таке HTTP та HTTPS. Як працює і в чому різниця](https://youtu.be/6RBx2lkA4us?si=5DyVySfxs4cQ3hOp)
+* [Що таке домен і IP-адреса сайту](https://youtu.be/ACYyBPoi4Go?si=bFLyXS_PA_XWVC3T)
