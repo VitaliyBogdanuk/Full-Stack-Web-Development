@@ -14,13 +14,14 @@ layout: default
 - [Модуль 4 — Бази даних](./modules/M04-Databases/)
 - [Модуль 5 — Full-Stack інтеграція](./modules/M05-FullStack-Integration/)
 
-## Силлабус
+## Корисні матеріали
 - [Огляд програми](./syllabus/overview.md)
 
-- [Classroom Mode](./CLASSROOM.md)
+- [Як працювати зі студентами](./CLASSROOM.md)
 
-- [Student Quickstart](./STUDENT_GUIDE.md)
-- [Local Setup](./LOCAL_SETUP.md)
+- [Швидкий старт](./STUDENT_GUIDE.md)
+
+- [Налаштування середовища](./LOCAL_SETUP.md)
 
 
 ![Pages Deploy](./images/pages.png)
