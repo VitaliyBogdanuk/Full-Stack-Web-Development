@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.rulers": [
+      100
+    ]
+  },
+  "files.eol": "\n"
+}

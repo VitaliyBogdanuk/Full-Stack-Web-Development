@@ -1,0 +1,15 @@
+# Path-based labels for modules
+module: HTML/CSS:
+  - modules/M01-HTML-CSS/**
+
+module: JS-FE:
+  - modules/M02-JS-FE/**
+
+module: Node:
+  - modules/M03-NodeJS-Backend/**
+
+module: DB:
+  - modules/M04-Databases/**
+
+module: FullStack:
+  - modules/M05-FullStack-Integration/**

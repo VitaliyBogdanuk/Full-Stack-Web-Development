@@ -1,0 +1,60 @@
+name: Course CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  markdownlint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run markdownlint-cli2
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: |
+            **/*.md
+          config: .markdownlint.json
+
+  node-tests:
+    name: Node.js tests (if package.json exists)
+    runs-on: ubuntu-latest
+    if: ${{ hashFiles('**/package.json') != '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+      - name: Run tests
+        run: npm test --silent
+
+
+  lint-code:
+    name: ESLint & Prettier check
+    runs-on: ubuntu-latest
+    if: ${{ hashFiles('**/package.json') != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dev deps
+        run: npm ci || npm install
+      - name: Prettier check
+        run: npm run format:check
+      - name: ESLint
+        run: npm run lint

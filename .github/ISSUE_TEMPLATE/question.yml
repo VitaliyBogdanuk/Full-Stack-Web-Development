@@ -1,0 +1,12 @@
+name: Question
+description: Питання по матеріалу
+title: "[Q] <short question>"
+labels: ["question"]
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Деталі
+      placeholder: Опишіть ваше питання/контекст
+    validations:
+      required: true

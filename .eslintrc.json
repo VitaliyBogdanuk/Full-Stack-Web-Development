@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "languageOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": {},
+  "extends": [
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": [
+        "**/*.{js,jsx}"
+      ],
+      "parser": null,
+      "extends": [
+        "eslint:recommended"
+      ]
+    }
+  ],
+  "rules": {
+    "no-unused-vars": "warn"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "build/",
+    "coverage/"
+  ]
+}

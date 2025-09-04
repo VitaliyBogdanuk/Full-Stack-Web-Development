@@ -1,0 +1,9 @@
+# Assign default reviewers/owners
+# Replace @your-username with your GitHub handle(s)
+*       @your-username
+
+/modules/M01-HTML-CSS/        @your-username
+/modules/M02-JS-FE/           @your-username
+/modules/M03-NodeJS-Backend/  @your-username
+/modules/M04-Databases/       @your-username
+/modules/M05-FullStack-Integration/ @your-username

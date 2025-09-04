@@ -1,0 +1,58 @@
+name: Auto-label PRs (branch + paths)
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  ensure-labels-and-apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure base labels exist
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const wanted = [
+              { name: "homework",   color: "0e8a16", description: "Student homework PR" },
+              { name: "checkpoint", color: "1d76db", description: "Module checkpoint" },
+              { name: "exam",       color: "b60205", description: "Final exam / project" },
+              { name: "module: HTML/CSS", color: "5319e7", description: "Module 1" },
+              { name: "module: JS-FE",    color: "5319e7", description: "Module 2" },
+              { name: "module: Node",     color: "5319e7", description: "Module 3" },
+              { name: "module: DB",       color: "5319e7", description: "Module 4" },
+              { name: "module: FullStack",color: "5319e7", description: "Module 5" }
+            ];
+            for (const l of wanted) {
+              try {
+                await github.rest.issues.getLabel({ owner: context.repo.owner, repo: context.repo.repo, name: l.name });
+              } catch (e) {
+                await github.rest.issues.createLabel({ owner: context.repo.owner, repo: context.repo.repo, name: l.name, color: l.color, description: l.description });
+              }
+            }
+      - name: Label by branch name
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const ref = context.payload.pull_request.head.ref;
+            const labels = [];
+            if (/^hw\/W\d{2}-/i.test(ref)) labels.push("homework");
+            if (/^checkpoint\//i.test(ref)) labels.push("checkpoint");
+            if (/^exam\//i.test(ref)) labels.push("exam");
+            if (labels.length) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                labels
+              });
+            }
+      - name: Label by changed paths
+        uses: actions/labeler@v5
+        with:
+          configuration-path: .github/labeler.yml

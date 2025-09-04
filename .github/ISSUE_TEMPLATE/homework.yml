@@ -1,0 +1,19 @@
+name: Homework
+description: Подати домашнє завдання
+title: "[HW] WXX - <topic>"
+labels: ["homework"]
+body:
+  - type: input
+    id: week
+    attributes:
+      label: Тиждень (WXX)
+      placeholder: "W07"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Короткий опис
+      placeholder: Що зроблено...
+    validations:
+      required: true

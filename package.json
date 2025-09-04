@@ -1,0 +1,19 @@
+{
+  "name": "fullstack-course",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Course repository skeleton for Full-Stack Web Development (HTML + Node.js, \u0431\u0435\u0437 \u0444\u0440\u0435\u0439\u043c\u0432\u043e\u0440\u043a\u0456\u0432)",
+  "scripts": {
+    "test": "echo \"No tests in root\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0 || true",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
+    "eslint": "^9.13.0",
+    "prettier": "^3.3.3"
+  }
+}
