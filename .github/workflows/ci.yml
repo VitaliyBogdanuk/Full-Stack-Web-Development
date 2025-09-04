@@ -2,9 +2,15 @@ name: Course CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
+    paths:
+      - "**/*.js"
+      - "**/*.ts"
+      - ".github/workflows/ci.yml"
   pull_request:
-    branches: [ "main" ]
+    paths:
+      - "**/*.js"
+      - "**/*.ts"
   workflow_dispatch:
 
 jobs:
@@ -41,7 +47,6 @@ jobs:
           fi
       - name: Run tests
         run: npm test --silent
-
 
   lint-code:
     name: ESLint & Prettier check
