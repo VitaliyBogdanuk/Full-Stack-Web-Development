@@ -3,12 +3,12 @@
 ## 1) Основний варіант (форк + PR у свій форк)
 ```mermaid
 flowchart LR
-  subgraph Upstream["Upstream (викладач)"]
+  subgraph Upstream["📚 Upstream (викладач)"]
     Umain[(main)]
     Usolutions[(solutions)]
   end
 
-  subgraph Origin["Твій Fork (origin)"]
+  subgraph Origin["🧑‍💻 Твій Fork (origin)"]
     Smain[(main)]
     Shw["hw/WXX-yourname"]
   end
@@ -18,6 +18,12 @@ flowchart LR
   Shw -->|PR| PRo[PR → origin:main]
   PRo --> Smain
   Smain -- fetch/merge --> Umain
+
+  %% 🔖 Визначаємо клас для білих блоків
+  classDef whitebg fill:#fff,stroke:#333,stroke-width:1px;
+
+  %% 🔖 Призначаємо клас контейнерам subgraph
+  class Upstream,Origin whitebg;
 ```
 
 ### Кроки
