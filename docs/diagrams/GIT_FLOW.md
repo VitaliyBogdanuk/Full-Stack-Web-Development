@@ -29,14 +29,21 @@ flowchart LR
 
 ## 2) Вигрузка оновлень викладача у свій форк
 ```mermaid
-sequenceDiagram
-  participant You as Ти (origin)
-  participant Up as Upstream (викладач)
-  You->>Up: git fetch upstream
-  You->>You: git checkout main
-  You->>You: git merge upstream/main
-  You->>You: вирішити конфлікти (якщо є)
-  You->>You: git push origin main
+flowchart TB
+    START([Початок: синхронізація форку])
+
+    FETCH[git fetch upstream]
+    CHECKOUT[git checkout main]
+    MERGE[git merge upstream/main]
+
+    DECISION{Є конфлікти?}
+    FIX[Вирішити конфлікти]
+    PUSH[git push origin main]
+    END([Кінець: main оновлена])
+
+    START --> FETCH --> CHECKOUT --> MERGE --> DECISION
+    DECISION -- Так --> FIX --> PUSH --> END
+    DECISION -- Ні --> PUSH --> END
 ```
 
 ## Корисні команди (шпаргалка)

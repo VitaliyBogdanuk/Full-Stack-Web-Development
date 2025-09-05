@@ -3,11 +3,12 @@
 ```mermaid
 flowchart TB
   A[Push / PR до main] --> ML[Markdownlint]
-  A --> LC[Link Checker (lychee)]
-  A --> Lint[ESLint/Prettier]
-  A --> Tests[Node tests (vitest/jest)]
+  A --> LC[Link Checker lychee]
+  A --> Lint[ESLint / Prettier]
+  A --> Tests[Node tests: vitest / jest]
+
   ML & LC & Lint & Tests --> Ok{Усі перевірки пройдені?}
-  Ok -- так --> Pages[Deploy GitHub Pages (docs/)]
+  Ok -- так --> Pages[Deploy GitHub Pages docs/]
   Ok -- ні --> Fix[Виправ помилки та зроби push]
 ```
 
