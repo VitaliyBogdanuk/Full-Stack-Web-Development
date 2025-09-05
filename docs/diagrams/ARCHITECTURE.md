@@ -17,6 +17,12 @@ flowchart TB
 
   H -- посилається на --> IMG
   H -- підключає --> FONTS
+
+  %% 🔖 Визначаємо клас для білих блоків
+  classDef whitebg fill:#fff,stroke:#333,stroke-width:1px;
+
+  %% 🔖 Призначаємо клас контейнерам subgraph
+  class Upstream,Origin whitebg;
 ```
 
 ## 2) Backend на Node.js (без фреймворків)
@@ -40,6 +46,12 @@ flowchart LR
     R --> C1
     C1 --> S1
   end
+
+  %% 🔖 Визначаємо клас для білих блоків
+  classDef whitebg fill:#fff,stroke:#333,stroke-width:1px;
+
+  %% 🔖 Призначаємо клас контейнерам subgraph
+  class Upstream,Origin whitebg;
 ```
 
 ## 3) Full‑Stack інтеграція (JWT, БД, Uploads)
@@ -67,4 +79,10 @@ flowchart TB
   end
   NGINX <--> NODE
   Users[Користувачі] -->|HTTPS :443| NGINX
+
+  %% 🔖 Визначаємо клас для білих блоків
+  classDef whitebg fill:#fff,stroke:#333,stroke-width:1px;
+
+  %% 🔖 Призначаємо клас контейнерам subgraph
+  class Upstream,Origin whitebg;
 ```
